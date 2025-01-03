@@ -1,4 +1,4 @@
-package kotlin;
+package com.github.kboeckler.demo.kotlin;
 
 import java.util.stream.Stream;
 
