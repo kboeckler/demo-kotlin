@@ -1,40 +1,120 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/custom.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Outline</h1>
+            <ol>
+                <li>Motivation</li>
+                <li>How</li>
+                <li>Why</li>
+                <li>Comparison with Java</li>
+                <li>Additions to Java</li>
+            </ol>
+            <aside class="notes">
+                <h1>Outline</h1>
+                <ol>
+                    <li>Motivation for learning a new language</li>
+                    <li>How does Kotlin work on an operational level</li>
+                    <li>Why does Kotlin exist</li>
+                    <li>How does Kotlin compare to Java</li>
+                    <li>What does Kotlin offer in addition?</li>
+                </ol>
+            </aside>
+        </section>
+        <section>
+            <h1>Motivation</h1>
+            <section>
+                Learn a language every year<br/>
+                <img data-src="img/pragprog_xlargecover.jpg"/>
+                <aside class="notes">
+                    Learn a language every year: The Pragmatic Programmer, kontrovers ggf.
+                </aside>
+            </section>
+            <section>
+                Glimpse on Kotlin
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+                Some first impression here
+            </section>
+        </section>
+        <section>
+            <h1>How</h1>
+            <section>
+                <img data-src="img/Qualitaetsmerkmale.png"/>
+            </section>
+            <section>
+                Läuft auf der JVM<br/>
+                -> Also auch standalone wie Java<br/>
+                <br/>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+                <ul>
+                    <li>Buildsystem: Maven, Gradle</li>
+                    <li>Kotlin Compiler als Java-Library</li>
+                    <li>Buildartefakte: .class, .jar, .war (Java Bytecode)</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Übertragbarkeit</li>
+                    <li>Sicherheit</li>
+                    <li>Kompatibilität</li>
+                    <li>Portabilität</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h1>Why</h1>
+            <section>
+                <ul>
+                    <li>Wartbarkeit</li>
+                    <li>Fehlertoleranz</li>
+                    <li>Effizienz</li>
+                    <li>Effektivität</li>
+                </ul>
+            </section>
+            <section>
+                Kotlin ist wie Java
+            </section>
+            <section>
+                Kotlin ist das bessere Java
+            </section>
+            <section>
+                Kotlin kann mit Java interagieren und anders herum<br/>
+                -> Interoperabilität
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>
