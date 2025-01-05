@@ -21,8 +21,8 @@
             <h1>Outline</h1>
             <ol>
                 <li>Motivation</li>
-                <li>How</li>
-                <li>Why</li>
+                <li>Warum</li>
+                <li>Wie</li>
                 <li>Comparison with Java</li>
                 <li>Additions to Java</li>
             </ol>
@@ -53,7 +53,7 @@
             </section>
         </section>
         <section>
-            <h1>How</h1>
+            <h1>Wie</h1>
             <section>
                 <img data-src="img/Qualitaetsmerkmale.png"/>
             </section>
@@ -73,12 +73,12 @@
                     <li>Übertragbarkeit</li>
                     <li>Sicherheit</li>
                     <li>Kompatibilität</li>
-                    <li>Portabilität</li>
+                    <li>Portierbarkeit</li>
                 </ul>
             </section>
         </section>
         <section>
-            <h1>Why</h1>
+            <h1>Warum</h1>
             <section>
                 <ul>
                     <li>Wartbarkeit</li>
@@ -98,6 +98,39 @@
                 -> Interoperabilität
             </section>
         </section>
+        <section>
+            <h1>Kotlin</h1>
+            <section>
+                Syntax
+                <pre><code data-trim data-noescape>
+fun main() {
+    println("Hello from Kotlin")
+}
+                </code></pre>
+            </section>
+            <section>
+                Types<br/>
+
+                <a href="https://www.youtube.com/watch?v=KvehHqnEXuc">https://www.youtube.com/watch?v=KvehHqnEXuc</a>
+                <img data-src="img/qr-youtube-types.png"/>
+            </section>
+            <section>
+                Nonnull
+                <pre><code data-trim data-noescape>
+fun main() {
+    val name: String = "Kevin"
+    val anotherNameOrNot: String? = "Kevin"
+    val anotherNameOrNot: String? = null
+}
+                </code></pre>
+            </section>
+            <section>
+                Functions<br/>
+
+                <a href="https://www.youtube.com/watch?v=eXT1wglHAQo">https://www.youtube.com/watch?v=eXT1wglHAQo</a>
+                <img data-src="img/qr-youtube-functions.png"/>
+            </section>
+        </section>
     </div>
 </div>
 
@@ -111,7 +144,6 @@
     // - https://revealjs.com/config/
     Reveal.initialize({
         hash: true,
-
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
     });
