@@ -6,4 +6,4 @@
  * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
  */
 
-.reveal.reveal img{border:none;box-shadow:none;max-height:70%;max-width:70%}
+.reveal.reveal img{border:none;box-shadow:none;max-height:70%;max-width:70%}pre.kotlin>code{background-image:url(/img/kotlin.png);background-position:bottom right;background-size:1.5em;background-repeat:no-repeat;background-color:#eef1ff}pre.java>code{background-image:url(/img/java.png);background-position:bottom right;background-size:1.5em;background-repeat:no-repeat;background-color:#ffeaea}

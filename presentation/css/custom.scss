@@ -5,3 +5,19 @@
   max-height: 70%;
   max-width: 70%;
 }
+
+pre.kotlin > code {
+  background-image: url("/img/kotlin.png");
+  background-position: bottom right;
+  background-size: 1.5em;
+  background-repeat: no-repeat;
+  background-color: #eef1ff
+}
+
+pre.java > code {
+  background-image: url("/img/java.png");
+  background-position: bottom right;
+  background-size: 1.5em;
+  background-repeat: no-repeat;
+  background-color: #ffeaea
+}
