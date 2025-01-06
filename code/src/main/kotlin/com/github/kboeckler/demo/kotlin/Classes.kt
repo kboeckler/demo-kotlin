@@ -36,11 +36,7 @@ class SomeClass(val zahl: Int) {
 
 }
 
-data class SomeDataClass(val zahl: Int) {
-
-    private val anotherZahl: Int = zahl * 2
-
-}
+data class SomeDataClass(val zahl: Int)
 
 enum class SomeEnum() {
     ROT, GELB, BLAU;
