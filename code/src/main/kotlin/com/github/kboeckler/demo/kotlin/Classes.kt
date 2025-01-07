@@ -23,17 +23,15 @@ fun main() {
     impl2.printIt()
 }
 
-class SomeClass(val zahl: Int) {
+class SomeClass(zahl: Int) {
 
     constructor() : this(1)
 
-    private val anotherZahl: Int = zahl * 2
+    private val zahl: Int = zahl
 
     fun printIt() {
         println(zahl)
-        println(anotherZahl)
     }
-
 }
 
 data class SomeDataClass(val zahl: Int)

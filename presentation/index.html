@@ -6,6 +6,8 @@
 
     <title>Kotlin Demo for Java Devs</title>
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
     <link rel="stylesheet" href="dist/custom.css">
@@ -20,14 +22,14 @@
 <div class="reveal">
     <div class="slides">
         <section>
-          <pre class="headline"><code>fun kotlin() = true</code></pre>
-          <br/>
-          <p class="author">
-            Kevin Böckler<br/>
-            9. Januar 2025<br/>
-            <a href="https://www.meetup.com/softwerkskammer-luebeck">https://www.meetup.com/softwerkskammer-luebeck</a><br/>
-            <img data-src="img/qr-softwerkskammer.png"/>
-          </p>
+            <pre class="headline"><code>fun kotlin() = true</code></pre>
+            <br/>
+            <p class="author">
+                Kevin Böckler<br/>
+                9. Januar 2025<br/>
+                <a href="https://www.meetup.com/softwerkskammer-luebeck">https://www.meetup.com/softwerkskammer-luebeck</a><br/>
+                <img data-src="img/qr-softwerkskammer.png"/>
+            </p>
         </section>
         <section>
             <h1>Agenda</h1>
@@ -107,8 +109,11 @@ fun main() {
 }
                 </code></pre>
                 <pre class="java"><code data-trim data-noescape>
-public static void main(String[] args) {
+public class Main {
+
+  public static void main() {
     System.out.println("Hello from Java");
+  }
 }
                 </code></pre>
             </section>
@@ -135,24 +140,63 @@ double getSomeValue(String input) {}
         </section>
         <section>
             <h1>Null-Safety</h1>
+            <section>
             <pre class="kotlin"><code data-trim data-noescape>
 val name: String = "Kevin"
-val anotherNameOrNot: String? = "Kevin"
-val anotherNameOrNot: String? = null
+val nameOrNot: String? = "Kevin"
+val nameOrNot: String? = null
             </code></pre>
-            <pre class="java"><code data-trim data-noescape>
+                <pre class="java"><code data-trim data-noescape>
 String name = "Kevin";
-Optional anotherNameOrNot = Optional.of("Kevin");
-Optional anotherNameOrNot = Optional.empty();
+Optional nameOrNot = Optional.of("Kevin");
+Optional nameOrNot = Optional.empty();
             </code></pre>
+                <aside class="notes">
+                    Darauf hinweisen, dass man in Kotlin im Standard einfach kein null zuweisen kann
+                </aside>
+            </section>
+            <section>
+            <pre class="kotlin"><code data-trim data-noescape>
+// Person besteht aus Name?
+println(personWithoutName.name?.vorname)
+            </code></pre>
+                <pre class="java"><code data-trim data-noescape>
+// Person besteht aus Optional
+System.out.println(personWithoutName.getName()
+                    .map(Name::vorname));
+            </code></pre>
+            </section>
+            <section>
+            <pre class="kotlin"><code data-trim data-noescape>
+val myName: String = nameOrNot ?: "Max Mustermann"
+            </code></pre>
+                <pre class="java"><code data-trim data-noescape>
+var myName = nameOrNot.orElse("Max");
+            </code></pre>
+            </section>
+            <section>
+            <pre class="kotlin"><code data-trim data-noescape>
+person.name?.let { personName ->
+    println(personName)
+}
+            </code></pre>
+                <pre class="java"><code data-trim data-noescape>
+person.getName().ifPresent(
+    personName -> {
+      System.out.println(personName);
+    });
+            </code></pre>
+            </section>
         </section>
         <section>
             <h1>Types</h1>
             <section>
                 <pre class="kotlin"><code data-trim data-noescape>
-class SomeClass(val zahl: Int) {
+class SomeClass(zahl: Int) {
 
     constructor() : this(1)
+
+    private val zahl: Int = zahl
 
     fun printIt() {
         println(zahl)

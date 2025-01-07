@@ -21,6 +21,11 @@ fun main() {
     println(personWithoutName.name?.vorname)
     val vorname: String = personWithoutName.name?.vorname ?: "Max"
     println(vorname)
+
+    // Let
+    person.name?.let { personName ->
+        println(personName)
+    }
 }
 
 data class Person(val name: Name?)

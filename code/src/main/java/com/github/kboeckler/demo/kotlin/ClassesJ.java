@@ -8,11 +8,8 @@ public class ClassesJ {
 
     private final int zahl;
 
-    private final int anotherZahl;
-
     public SomeClass(int zahl) {
       this.zahl = zahl;
-      anotherZahl = zahl * 2;
     }
 
     public SomeClass() {
@@ -21,7 +18,6 @@ public class ClassesJ {
 
     void printIt() {
       System.out.println(zahl);
-      System.out.println(anotherZahl);
     }
   }
 
