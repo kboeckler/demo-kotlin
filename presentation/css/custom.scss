@@ -1,5 +1,4 @@
-.reveal.reveal img
-{
+.reveal.reveal img {
   border: none;
   box-shadow: none;
   max-height: 70%;
@@ -20,4 +19,25 @@ pre.java > code {
   background-size: 1.5em;
   background-repeat: no-repeat;
   background-color: #ffeaea
+}
+
+pre.headline {
+  width: min-content !important;
+  font-size: xxx-large !important;
+}
+
+.author {
+  font-size: x-large;
+}
+
+h1 {
+  /* choosing our font */
+  background: linear-gradient(#ff5b00, #5f3dcc);
+  /* you can change the colors based on your preference */
+  background-clip: text;
+  /*add this line, it defines how far the background should extend within an element, here we set it to text */
+  -webkit-background-clip: text;
+  /* add this line, for browsers compatibility */
+  -webkit-text-fill-color: transparent;
+  /* specifies the fill color of text characters. We use transparent to use the background value as our text fill */
 }
