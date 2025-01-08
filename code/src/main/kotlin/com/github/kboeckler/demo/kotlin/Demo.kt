@@ -3,12 +3,14 @@ package com.github.kboeckler.demo.kotlin
 fun main() {
     findAllUsers()
         .filter { it.activated }
-        .joinToString { "," }
+        .map { it.name }
+        .take(3)
+        .joinToString(",")
         .let { println(it) }
 }
 
 fun findAllUsers(): List<User> {
-    return listOf(User("Kevin", true), User("Peter", false))
+    return listOf(User("Kevin", true), User("Peter", false), User("Lara", true))
 }
 
 fun someInts(): List<Int> {

@@ -65,7 +65,9 @@
                 <pre class="kotlin"><code data-trim data-noescape>
 findAllUsers()
     .filter { it.activated }
-    .joinToString { "," }
+    .map { it.name }
+    .take(3)
+    .joinToString(",")
     .let { println(it) }
               </code></pre>
             </section>
@@ -164,8 +166,8 @@ val nameOrNot: String? = null
             </code></pre>
                 <pre class="java"><code data-trim data-noescape>
 String name = "Kevin";
-Optional nameOrNot = Optional.of("Kevin");
-Optional nameOrNot = Optional.empty();
+Optional&lt;String&gt; nameOrNot = Optional.of("Kevin");
+Optional&lt;String&gt; nameOrNot = Optional.empty();
             </code></pre>
                 <aside class="notes">
                     Darauf hinweisen, dass man in Kotlin im Standard einfach kein null zuweisen kann
@@ -191,11 +193,11 @@ int forcedLength = nameOrNot.get().length();
             <section>
             <pre class="kotlin"><code data-trim data-noescape>
 // Person besteht aus Name?
-val vorname = personWithoutName.name?.vorname
+val vorname = person.name?.vorname
             </code></pre>
                 <pre class="java"><code data-trim data-noescape>
 // Person besteht aus Optional von Name
-var vorname = personWithoutName.getName().map(Name::vorname);
+var vorname = person.getName().map(Name::vorname);
             </code></pre>
             </section>
             <section>
@@ -311,6 +313,30 @@ class SomeImplementation implements SomeInterface {
             <h1>Functions</h1>
             <a href="https://www.youtube.com/watch?v=eXT1wglHAQo">https://www.youtube.com/watch?v=eXT1wglHAQo</a>
             <img data-src="img/qr-youtube-functions.png"/>
+        </section>
+        <section>
+            <h1>Streams</h1>
+            Ist doch toll<br/>
+            <img width="50%" data-src="img/stream.png"/>
+        </section>
+        <section>
+            <h1>Interoperabilität</h1>
+            Praxisbeispiele<br/>
+        </section>
+        <section>
+            <h1>Features</h1>
+            <a href="https://www.youtube.com/watch?v=OFWMtmqocV8">https://www.youtube.com/watch?v=OFWMtmqocV8</a>
+            <img data-src="img/qr-youtube-additional.png"/>
+        </section>
+        <section>
+            <pre class="headline"><code>val (sprache, gelernt) = "kotlin" to true</code></pre>
+            <br/>
+            <p class="author">
+                Kevin Böckler<br/>
+                9. Januar 2025<br/>
+                <a href="https://www.meetup.com/softwerkskammer-luebeck">https://www.meetup.com/softwerkskammer-luebeck</a><br/>
+                <img data-src="img/qr-softwerkskammer.png"/>
+            </p>
         </section>
     </div>
 </div>
