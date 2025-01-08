@@ -35,8 +35,8 @@
             <h1>Agenda</h1>
             <ol>
                 <li>Motivation</li>
-                <li>Warum</li>
-                <li>Wie</li>
+                <li>Wie?</li>
+                <li>Warum?</li>
                 <li>Kotlin</li>
             </ol>
             <aside class="notes">
@@ -60,13 +60,29 @@
                 </aside>
             </section>
             <section>
-                Glimpse on Kotlin
-
-                Some first impression here
+              <img width="20%" data-src="img/stream.png"/><br/>
+              Besser streamen
+                <pre class="kotlin"><code data-trim data-noescape>
+findAllUsers()
+    .filter { it.activated }
+    .joinToString { "," }
+    .let { println(it) }
+              </code></pre>
+            </section>
+            <section>
+              <img width="20%" data-src="img/star.png"/><br/>
+              Moderne Sprache
+              <pre class="kotlin"><code data-trim data-noescape>
+fun someInts(): List&lt;Int&gt; {
+    val list: MutableList&lt;Int&gt; = mutableListOf(1, 2)
+    list.add(3)
+    return list
+}
+            </code></pre>
             </section>
         </section>
         <section>
-            <h1>Wie</h1>
+            <h1>Wie?</h1>
             <section>
                 Läuft auf der JVM<br/>
                 -> Also auch standalone wie Java<br/>
@@ -81,18 +97,18 @@
             <section>
                 <img data-src="img/Qualitaetsmerkmale.png"/>
                 <small>
-                    Übertragbarkeit
-                    Sicherheit
-                    Kompatibilität
-                    Portierbarkeit
+                    Übertragbarkeit ✔️
+                    Sicherheit ✔️
+                    Kompatibilität ✔️
+                    Portierbarkeit ✔️
                 </small>
             </section>
         </section>
         <section>
-            <h1>Warum</h1>
+            <h1>Warum?</h1>
             <section>
                 <ul>
-                    <li>Wartbarkeit</li>
+                    <li>Wartbarkeit ✔️</li>
                     <li>Nah an der Java-Sprache</li>
                     <li>Moderner Sprachfeatures</li>
                     <li>Aufgeräumte Syntax</li>
