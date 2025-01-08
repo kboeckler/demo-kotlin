@@ -26,6 +26,12 @@ public class NonNullsJ {
         personName -> {
           System.out.println(personName);
         });
+
+    // if / get
+    if (nameOrNot.isPresent()) {
+      int length = nameOrNot.get().length();
+    }
+    int forcedLength = nameOrNot.get().length();
   }
 
   private record Person(Name name) {

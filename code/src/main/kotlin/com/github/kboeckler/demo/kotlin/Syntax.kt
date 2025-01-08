@@ -16,4 +16,5 @@ fun main() {
     neueAndereZahl = 12.0
     // neueAndereZahl = "Hallo"
     // val varWithType: Int = "Welt"
+
 }

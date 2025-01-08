@@ -21,6 +21,16 @@ pre.java > code {
   background-color: #ffeaea
 }
 
+pre.wrong {
+  border-color: #c03232;
+  border-width: 0.1em;
+  border-style: dotted;
+}
+
+pre.wrong > code {
+  background-color: #ffb9b9
+}
+
 pre.headline {
   width: min-content !important;
   font-size: xxx-large !important;

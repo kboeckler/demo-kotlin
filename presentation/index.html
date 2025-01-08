@@ -156,22 +156,30 @@ Optional nameOrNot = Optional.empty();
                 </aside>
             </section>
             <section>
-            <pre class="kotlin"><code data-trim data-noescape>
-// Person besteht aus Name?
-println(personWithoutName.name?.vorname)
+            <pre class="kotlin wrong"><code data-trim data-noescape>
+val length = nameOrNot.length
+            </code></pre>
+                <pre class="kotlin"><code data-trim data-noescape>
+if (nameOrNot != null) {
+    val length = nameOrNot.length
+}
+val forcedLength = nameOrNot!!.length
             </code></pre>
                 <pre class="java"><code data-trim data-noescape>
-// Person besteht aus Optional
-System.out.println(personWithoutName.getName()
-                    .map(Name::vorname));
+if (nameOrNot.isPresent()) {
+  int length = nameOrNot.get().length();
+}
+int forcedLength = nameOrNot.get().length();
             </code></pre>
             </section>
             <section>
             <pre class="kotlin"><code data-trim data-noescape>
-val myName: String = nameOrNot ?: "Max Mustermann"
+// Person besteht aus Name?
+val vorname = personWithoutName.name?.vorname
             </code></pre>
                 <pre class="java"><code data-trim data-noescape>
-var myName = nameOrNot.orElse("Max");
+// Person besteht aus Optional von Name
+var vorname = personWithoutName.getName().map(Name::vorname);
             </code></pre>
             </section>
             <section>
@@ -185,6 +193,14 @@ person.getName().ifPresent(
     personName -> {
       System.out.println(personName);
     });
+            </code></pre>
+            </section>
+            <section>
+            <pre class="kotlin"><code data-trim data-noescape>
+val myName: String = nameOrNot ?: "Max Mustermann"
+            </code></pre>
+                <pre class="java"><code data-trim data-noescape>
+var myName = nameOrNot.orElse("Max");
             </code></pre>
             </section>
         </section>

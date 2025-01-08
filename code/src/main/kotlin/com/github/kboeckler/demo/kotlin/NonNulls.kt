@@ -26,6 +26,13 @@ fun main() {
     person.name?.let { personName ->
         println(personName)
     }
+
+    //val length = nameOrNot.length
+    // Smartcast
+    if (nameOrNot != null) { // of type String?
+        val length = nameOrNot.length // of smart type String
+    }
+    val forcedLength = nameOrNot!!.length
 }
 
 data class Person(val name: Name?)
