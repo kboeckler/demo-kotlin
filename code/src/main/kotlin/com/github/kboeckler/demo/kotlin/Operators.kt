@@ -6,8 +6,6 @@ fun main() {
     val delta = there - here
 
     println(MyVector(2, 2) == MyVector(2, 2))
-
-    // more here: https://kotlinlang.org/docs/operator-overloading.html
 }
 
 class MyVector(val x: Int, val y: Int) {

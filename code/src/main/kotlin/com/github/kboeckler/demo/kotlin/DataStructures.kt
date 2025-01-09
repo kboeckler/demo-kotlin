@@ -14,4 +14,16 @@ fun main() {
     val mutableList = mutableListOf(1, 2, 3)
     mutableList.add(4)
     println(mutableList)
+
+    // Map
+    val map = mutableMapOf(1 to "one", 2 to "two", 3 to "three")
+    map[4] = "four"
+    val zero = map[0]
+    val one = map[1]
+    println(zero)
+    println(one)
+
+    // Pair
+    val mengeObst = Pair(1, "Apfel")
+    val andereMenge = 1 to "Apfel"
 }

@@ -21,6 +21,11 @@ fun main() {
     val impl = SomeImplementation() // of type SomeImplementation
     val impl2: SomeInterface = impl
     impl2.printIt()
+
+    // Property
+    val propertyObj = SomePropertyClass(1)
+    propertyObj.zahl = 42
+    println(propertyObj.zahl)
 }
 
 class SomeClass(zahl: Int) {
@@ -52,4 +57,16 @@ class SomeImplementation : SomeInterface {
     override fun printIt() {
         println("Hallo from Implementation")
     }
+}
+
+class SomePropertyClass(private var innerZahl: Int) {
+    var zahl: Int
+        get() {
+            println("Getter called, returning $innerZahl")
+            return innerZahl
+        }
+        set(value) {
+            println("Setter called with value: $value")
+            innerZahl = value
+        }
 }

@@ -30,6 +30,11 @@
                 <a href="https://www.meetup.com/softwerkskammer-luebeck">https://www.meetup.com/softwerkskammer-luebeck</a><br/>
                 <img data-src="img/qr-softwerkskammer.png"/>
             </p>
+          <aside class="notes">
+            Ich: Java Entwickler, Architekt. Kotlin und Go privat<br/>
+            Auch mal gerne Programmierchallenges wie den AoC<br/>
+            Kotlin ist das bessere Java?
+          </aside>
         </section>
         <section>
             <h1>Agenda</h1>
@@ -39,25 +44,12 @@
                 <li>Warum?</li>
                 <li>Kotlin</li>
             </ol>
-            <aside class="notes">
-                <h1>Outline</h1>
-                <ol>
-                    <li>Motivation for learning a new language</li>
-                    <li>How does Kotlin work on an operational level</li>
-                    <li>Why does Kotlin exist</li>
-                    <li>How does Kotlin compare to Java</li>
-                    <li>What does Kotlin offer in addition?</li>
-                </ol>
-            </aside>
         </section>
         <section>
             <h1>Motivation</h1>
             <section>
                 Learn a language every year<br/>
                 <img data-src="img/pragprog_xlargecover.jpg"/>
-                <aside class="notes">
-                    Learn a language every year: The Pragmatic Programmer, kontrovers ggf.
-                </aside>
             </section>
             <section>
                 <img width="20%" data-src="img/stream.png"/><br/>
@@ -81,6 +73,9 @@ fun someInts(): List&lt;Int&gt; {
     return list
 }
             </code></pre>
+              <aside class="notes">
+                Kotlin enthält Sprachfeatures moderner Sprachen
+              </aside>
             </section>
         </section>
         <section>
@@ -91,8 +86,8 @@ fun someInts(): List&lt;Int&gt; {
                 <br/>
 
                 <ul>
-                    <li>Buildsystem: Maven, Gradle</li>
                     <li>Kotlin Compiler als Java-Library</li>
+                    <li>Buildsystem: Maven, Gradle</li>
                     <li>Buildartefakte: .class, .jar, .war (Java Bytecode)</li>
                 </ul>
             </section>
@@ -137,8 +132,8 @@ public class Main {
             </section>
             <section>
                 <pre class="kotlin"><code data-trim data-noescape>
-val neueZahl: Int = 12
-val neueAndereZahl: Double
+val zahl = 12
+val andereZahl: Double
 
 var veraenderlich = 1
 veraenderlich = 2
@@ -146,14 +141,18 @@ veraenderlich = 2
 fun getSomeValue(input: String): Double {}
                 </code></pre>
                 <pre class="java"><code data-trim data-noescape>
-final var neueZahl = 12;
-final double neueAndereZahl;
+final var zahl = 12;
+final double andereZahl;
 
 var veraenderlich = 1;
 veraenderlich = 2;
 
 double getSomeValue(String input) {}
                 </code></pre>
+                <aside class="notes">
+                  Reihenfolge: Name und dann : Typ<br/>
+                  val/var versus final
+                </aside>
             </section>
         </section>
         <section>
@@ -170,6 +169,7 @@ Optional&lt;String&gt; nameOrNot = Optional.of("Kevin");
 Optional&lt;String&gt; nameOrNot = Optional.empty();
             </code></pre>
                 <aside class="notes">
+                  1. Main-Feature: Null ist erstmal verboten<br/>
                     Darauf hinweisen, dass man in Kotlin im Standard einfach kein null zuweisen kann
                 </aside>
             </section>
@@ -189,6 +189,9 @@ if (nameOrNot.isPresent()) {
 }
 int forcedLength = nameOrNot.get().length();
             </code></pre>
+              <aside class="notes">
+                in Java würde man ohne Optional viel != null oder so machen
+              </aside>
             </section>
             <section>
             <pre class="kotlin"><code data-trim data-noescape>
@@ -242,6 +245,9 @@ class SomeClass(zahl: Int) {
                     <li>data class</li>
                     <li>enum class</li>
                 </ul>
+              <aside class="notes">
+                Class: Primary und Secondary Constructor
+              </aside>
             </section>
             <section>
                 <pre class="kotlin"><code data-trim data-noescape>
@@ -302,7 +308,7 @@ class SomeImplementation implements SomeInterface {
     }
 }
                 </code></pre>
-                <aside class="notes">Hier auf die Interoperabilität verweisen: Auch mal den AoC-Runner nennen</aside>
+                <aside class="notes">Hier auf die Gleichheit und Interoperabilität verweisen.</aside>
             </section>
             <section>
                 <a href="https://www.youtube.com/watch?v=KvehHqnEXuc">https://www.youtube.com/watch?v=KvehHqnEXuc</a>
@@ -323,6 +329,9 @@ class SomeObject(private val innerString: String) {
     }
 }
                 </code></pre>
+              <aside class="notes">
+                Auf String-Template verweisen
+              </aside>
             </section>
             <section>
                 Extension Function
@@ -334,18 +343,11 @@ fun String.greet(): String {
     return "Hallo $this"
 }
             </code></pre>
+              <aside class="notes">
+                Extension Functions sind intern statisch
+              </aside>
             </section>
-            <section>
-                <pre class="kotlin"><code data-trim data-noescape>
-val numberFunction: (Int) -> Int
-
-fun doWith(number: Int, numberFunction: (Int) -> Int) {
-    val result = func.invoke(number)
-    println(result)
-}
-            </code></pre>
-            </section>
-            <section>
+          <section>
                 <pre class="kotlin"><code data-trim data-noescape>
 val firstFunction: (String) -> String
 val upperCaseFunction: (String) -> String
@@ -354,7 +356,36 @@ upperCaseFunction = ::upperCaseChar
 
 val result = upperCaseFunction(firstFunction("Apfel"))
             </code></pre>
-            </section>
+            <aside class="notes">
+              Funktionen hintereinanderausführen lieber im Stream
+            </aside>
+          </section>
+          <section>
+                <pre class="kotlin"><code data-trim data-noescape>
+val numberFunction: (Int) -> Int
+
+fun doWith(number: Int, numberFunction: (Int) -> Int) {
+    val result = numberFunction.invoke(number)
+    println(result)
+}
+            </code></pre>
+            <aside class="notes">
+              .invoke() kann man durch Klammern direkt abkürzen (Operator später)
+            </aside>
+          </section>
+          <section>
+                <pre class="kotlin"><code data-trim data-noescape>
+fun doWith(number: Int, numberFunction: (Int) -> Int) {
+    ...
+}
+
+doWith(2, SquareFuncClass())
+doWith(2, ::cubeIt)
+
+doWith(2, { it - 1 })
+doWith(2) { it - 1 }
+            </code></pre>
+          </section>
             <section>
                     <a href="https://www.youtube.com/watch?v=eXT1wglHAQo">https://www.youtube.com/watch?v=eXT1wglHAQo</a>
                     <img data-src="img/qr-youtube-functions.png"/>
@@ -362,17 +393,38 @@ val result = upperCaseFunction(firstFunction("Apfel"))
             </section>
             <section>
                 <h1>Streams</h1>
-                Ist doch toll<br/>
+                Funktional mit Funktionen und Lambdas arbeiten<br/>
                 <img width="50%" data-src="img/stream.png"/>
+              <aside class="notes">
+                AoC-Beispiel: Day2 oder Day10
+              </aside>
             </section>
             <section>
-                <h1>Interoperabilität</h1>
-                Praxisbeispiele<br/>
-            </section>
-            <section>
-                <h1>Features</h1>
+              <h1>Features</h1>
+              <section>
+                Interoperabilität
+              </section>
+              <section>
+                Operatoren<br/>
+                <a href="https://kotlinlang.org/docs/operator-overloading.html">https://kotlinlang.org/docs/operator-overloading.html</a>
+                <img data-src="img/api.operators.png"/>
+              </section>
+              <section>
+                Properties
+              </section>
+              <section>
+                Datenstrukturen
+              </section>
+              <section>
+                Desctructuring
+              </section>
+              <section>
+                Zeitmessung
+              </section>
+              <section>
                 <a href="https://www.youtube.com/watch?v=OFWMtmqocV8">https://www.youtube.com/watch?v=OFWMtmqocV8</a>
                 <img data-src="img/qr-youtube-additional.png"/>
+              </section>
             </section>
             <section>
                 <pre class="headline"><code>val (sprache, gelernt) = "kotlin" to true</code></pre>

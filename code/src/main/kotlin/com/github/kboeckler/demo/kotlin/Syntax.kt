@@ -1,5 +1,7 @@
 package com.github.kboeckler.demo.kotlin
 
+import kotlin.properties.Delegates
+
 fun main() {
     // val
     var zahl = 42 // of type Int
@@ -16,5 +18,4 @@ fun main() {
     neueAndereZahl = 12.0
     // neueAndereZahl = "Hallo"
     // val varWithType: Int = "Welt"
-
 }
