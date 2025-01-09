@@ -2,22 +2,31 @@ package com.github.kboeckler.demo.kotlin
 
 fun main() {
     // Function
-    val obj = SomeObject()
-    val objString = obj.asMyString()
+    val obj = SomeObject("Kevin")
+    val objString = obj.greet()
     println(objString)
 
     // Extension Function
-    val str = "Hallo Welt"
-    val modified = str.changeIt()
+    val name = "Kevin"
+    val objMessage = name.greet()
+    println(objMessage)
+    val modified = name.changeIt()
     println(modified)
+    val sumOfChars = name.sum()
+    println(sumOfChars)
 
-    str.sum()
     // Old way
-    listOf(1, 2, 3).stream().map {}.toList()
+    listOf(1, 2, 3)
+        .stream()
+        .map {}
+        .toList()
     // Extension fun map on Iterable
-    listOf(1, 2, 3).map {}.toList()
+    listOf(1, 2, 3)
+        .map {}
+        .toList()
 
     // Functions as type
+    val numberFunction: (Int) -> Int
     val voidFunction: (String) -> Unit
     val firstFunction: (String) -> String
     val upperCaseFunction: (String) -> String
@@ -31,10 +40,14 @@ fun main() {
     println(result2)
 }
 
-class SomeObject {
-    fun asMyString(): String {
-        return "Test";
+class SomeObject(private val innerString: String) {
+    fun greet(): String {
+        return "Hallo $innerString";
     }
+}
+
+fun String.greet(): String {
+    return "Hallo $this"
 }
 
 fun String.changeIt(): String {

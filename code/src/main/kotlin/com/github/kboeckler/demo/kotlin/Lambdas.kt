@@ -3,8 +3,7 @@ package com.github.kboeckler.demo.kotlin
 fun main() {
     // Function as parameter
     doWithInterface(2, IncFunc())
-    doWith(2, SquareFunc())
-    doWith(2, SquareFunc()::squareIt)
+    doWith(2, SquareFuncClass())
     doWith(2, ::cubeIt)
 
     // Lambda as function
@@ -33,13 +32,9 @@ fun doWith(number: Int, func: (Int) -> Int) {
     println(result)
 }
 
-class SquareFunc : (Int) -> Int {
+class SquareFuncClass : (Int) -> Int {
     override fun invoke(p1: Int): Int {
         return p1 * p1
-    }
-
-    fun squareIt(number: Int): Int {
-        return number * number
     }
 }
 
