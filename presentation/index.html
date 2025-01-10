@@ -46,12 +46,13 @@
             </ol>
         </section>
         <section>
-            <h1>Motivation</h1>
             <section>
+              <h1>Motivation</h1>
                 Learn a language every year<br/>
                 <img data-src="img/pragprog_xlargecover.jpg"/>
             </section>
             <section>
+              <h1>Motivation</h1>
                 <img width="20%" data-src="img/stream.png"/><br/>
                 Besser streamen
                 <pre class="kotlin"><code data-trim data-noescape>
@@ -64,6 +65,7 @@ findAllUsers()
               </code></pre>
             </section>
             <section>
+              <h1>Motivation</h1>
                 <img width="20%" data-src="img/star.png"/><br/>
                 Moderne Sprache
                 <pre class="kotlin"><code data-trim data-noescape>
@@ -79,8 +81,8 @@ fun someInts(): List&lt;Int&gt; {
             </section>
         </section>
         <section>
-            <h1>Wie?</h1>
             <section>
+              <h1>Wie?</h1>
                 Läuft auf der JVM<br/>
                 -> Also auch standalone wie Java<br/>
                 <br/>
@@ -92,6 +94,7 @@ fun someInts(): List&lt;Int&gt; {
                 </ul>
             </section>
             <section>
+              <h1>Wie?</h1>
                 <img data-src="img/Qualitaetsmerkmale.png"/>
                 <small>
                     Übertragbarkeit ✔️
@@ -102,8 +105,7 @@ fun someInts(): List&lt;Int&gt; {
             </section>
         </section>
         <section>
-            <h1>Warum?</h1>
-            <section>
+              <h1>Warum?</h1>
                 <ul>
                     <li>Wartbarkeit ✔️</li>
                     <li>Nah an der Java-Sprache</li>
@@ -111,11 +113,10 @@ fun someInts(): List&lt;Int&gt; {
                     <li>Aufgeräumte Syntax</li>
                     <li>Interoperabilität</li>
                 </ul>
-            </section>
         </section>
         <section>
-            <h1>Syntax</h1>
             <section>
+              <h1>Syntax</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 fun main() {
     println("Hello from Kotlin")
@@ -131,6 +132,7 @@ public class Main {
                 </code></pre>
             </section>
             <section>
+              <h1>Syntax</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 val zahl = 12
 val andereZahl: Double
@@ -156,8 +158,8 @@ double getSomeValue(String input) {}
             </section>
         </section>
         <section>
-            <h1>Null-Safety</h1>
             <section>
+              <h1>Null-Safety</h1>
             <pre class="kotlin"><code data-trim data-noescape>
 val name: String = "Kevin"
 val nameOrNot: String? = "Kevin"
@@ -174,6 +176,7 @@ Optional&lt;String&gt; nameOrNot = Optional.empty();
                 </aside>
             </section>
             <section>
+              <h1>Null-Safety</h1>
             <pre class="kotlin wrong"><code data-trim data-noescape>
 val length = nameOrNot.length
             </code></pre>
@@ -194,6 +197,7 @@ int forcedLength = nameOrNot.get().length();
               </aside>
             </section>
             <section>
+              <h1>Null-Safety</h1>
             <pre class="kotlin"><code data-trim data-noescape>
 // Person besteht aus Name?
 val vorname = person.name?.vorname
@@ -204,6 +208,7 @@ var vorname = person.getName().map(Name::vorname);
             </code></pre>
             </section>
             <section>
+              <h1>Null-Safety</h1>
             <pre class="kotlin"><code data-trim data-noescape>
 person.name?.let { personName ->
     println(personName)
@@ -217,6 +222,7 @@ person.getName().ifPresent(
             </code></pre>
             </section>
             <section>
+              <h1>Null-Safety</h1>
             <pre class="kotlin"><code data-trim data-noescape>
 val myName: String = nameOrNot ?: "Max Mustermann"
             </code></pre>
@@ -226,8 +232,8 @@ var myName = nameOrNot.orElse("Max");
             </section>
         </section>
         <section>
-            <h1>Types</h1>
             <section>
+              <h1>Types</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 class SomeClass(zahl: Int) {
 
@@ -250,6 +256,7 @@ class SomeClass(zahl: Int) {
               </aside>
             </section>
             <section>
+              <h1>Types</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 data class SomeDataClass(val zahl: Int)
                 </code></pre>
@@ -285,6 +292,7 @@ record SomeDataClass(int zahl) {}
                 </code></pre>
             </section>
             <section>
+              <h1>Types</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 interface SomeInterface {
     fun printIt()
@@ -311,13 +319,14 @@ class SomeImplementation implements SomeInterface {
                 <aside class="notes">Hier auf die Gleichheit und Interoperabilität verweisen.</aside>
             </section>
             <section>
+              <h1>Types</h1>
                 <a href="https://www.youtube.com/watch?v=KvehHqnEXuc">https://www.youtube.com/watch?v=KvehHqnEXuc</a>
                 <img data-src="img/qr-youtube-types.png"/>
             </section>
         </section>
         <section>
-            <h1>Functions</h1>
             <section>
+              <h1>Functions</h1>
                 Function in class
                 <pre class="kotlin"><code data-trim data-noescape>
 val obj = SomeObject("Kevin")
@@ -334,6 +343,7 @@ class SomeObject(private val innerString: String) {
               </aside>
             </section>
             <section>
+              <h1>Functions</h1>
                 Extension Function
                 <pre class="kotlin"><code data-trim data-noescape>
 val name = "Kevin"
@@ -348,6 +358,7 @@ fun String.greet(): String {
               </aside>
             </section>
           <section>
+            <h1>Functions</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 val firstFunction: (String) -> String
 val upperCaseFunction: (String) -> String
@@ -361,6 +372,7 @@ val result = upperCaseFunction(firstFunction("Apfel"))
             </aside>
           </section>
           <section>
+            <h1>Functions</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 val numberFunction: (Int) -> Int
 
@@ -374,6 +386,7 @@ fun doWith(number: Int, numberFunction: (Int) -> Int) {
             </aside>
           </section>
           <section>
+            <h1>Functions</h1>
                 <pre class="kotlin"><code data-trim data-noescape>
 fun doWith(number: Int, numberFunction: (Int) -> Int) {
     ...
@@ -387,6 +400,7 @@ doWith(2) { it - 1 }
             </code></pre>
           </section>
             <section>
+              <h1>Functions</h1>
                     <a href="https://www.youtube.com/watch?v=eXT1wglHAQo">https://www.youtube.com/watch?v=eXT1wglHAQo</a>
                     <img data-src="img/qr-youtube-functions.png"/>
             </section>
@@ -400,28 +414,34 @@ doWith(2) { it - 1 }
               </aside>
             </section>
             <section>
-              <h1>Features</h1>
               <section>
+                <h1>Features</h1>
                 Interoperabilität
               </section>
               <section>
+                <h1>Features</h1>
                 Operatoren<br/>
                 <a href="https://kotlinlang.org/docs/operator-overloading.html">https://kotlinlang.org/docs/operator-overloading.html</a>
                 <img data-src="img/api.operators.png"/>
               </section>
               <section>
+                <h1>Features</h1>
                 Properties
               </section>
               <section>
+                <h1>Features</h1>
                 Datenstrukturen
               </section>
               <section>
+                <h1>Features</h1>
                 Desctructuring
               </section>
               <section>
+                <h1>Features</h1>
                 Zeitmessung
               </section>
               <section>
+                <h1>Features</h1>
                 <a href="https://www.youtube.com/watch?v=OFWMtmqocV8">https://www.youtube.com/watch?v=OFWMtmqocV8</a>
                 <img data-src="img/qr-youtube-additional.png"/>
               </section>
